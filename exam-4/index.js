@@ -32,6 +32,7 @@ const uiMaker = () => {
 
         tr.append(td1, td2, td3, td4, td5);
         tbody.appendChild(tr);
+
     }
 };
 
@@ -43,8 +44,8 @@ const handleDelete = (index) => {
 const handleData = (e) => {
     e.preventDefault();
 
-    let name = document.getElementById("name").value.trim();
-    let Grid = document.getElementById("Grid").value.trim();
+    let name = document.getElementById("name").value;
+    let Grid = document.getElementById("Grid").value;
     let Course = document.getElementById("courseoption").value;
     let fee = document.getElementById("feeoption").value;
 
@@ -63,9 +64,11 @@ const handleData = (e) => {
     } else {
         if (name.length < 2) {
             alert("Name must be at least 2 characters long.");
+            return
         } 
         else if (Grid.length !== 4) {
             alert("Grid number must be exactly 4 digits long.");
+            return
         } 
         else {
             alert("Please enter all required fields with valid data.");
