@@ -8,8 +8,7 @@ function Sorted (array){
         if (array[i] > array[i + 1]) {
           return   false;
         }
-
-    }
+     }
     return true;
 }
 console.log(Sorted([1, 2, 3, 4, 5])); 

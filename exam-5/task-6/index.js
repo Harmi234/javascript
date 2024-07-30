@@ -9,7 +9,6 @@ function remove(array) {
             Array.push(array[i]);
         }
     }
-
     return Array;
 }
 console.log(remove(array));

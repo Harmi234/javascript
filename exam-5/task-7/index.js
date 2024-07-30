@@ -1,6 +1,17 @@
 // Merge Two Arrays Two Arrays
-let Array1 = [1, 2, 3];
-let Array2 = [4, 5, 6];
-console.log(Array1,Array2);
+const mearge = () => {
+    let meargearray = []
+
+    let array1 = [1, 2, 3]
+    let array2 = [4, 5, 6]
+    for (let i = 0; i < array1.length; i++) {
+        meargearray.push(array1[i]);
+    }
+    for (let i = 0; i < array2.length; i++) {
+        meargearray.push(array2[i]);
+    }
+    console.log(meargearray);
+}
+mearge();
 
 

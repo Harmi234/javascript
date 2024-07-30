@@ -1,7 +1,9 @@
 //Find Missing Number
-function missingnumber(array){
-    let n = array.length+1;
-    let sum =  n*(n+1)/2;
-    
+function missingNumber(array) {
+    let n = array.length + 1; 
+    let extraSum = (n * (n + 1)) / 2; 
+    let resultSum = array.reduce((sum, num) => sum + num, 0); 
+    return extraSum - resultSum; 
 }
-console.log(missingnumber([1, 2, 4, 5, 6])); 
+
+console.log(missingNumber([1, 2, 4, 5, 6]));
