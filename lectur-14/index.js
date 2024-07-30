@@ -3,7 +3,7 @@ let users = [];
 const handleData = (e) => {
     e.preventDefault();
 
-    let regexUsername = /^[a-zA-Z0-9_]{3,15}$/; 
+    let regexUsername = /^[a-zA-Z0-9_]{2,16}$/; 
     let regexPhoneNumber = /^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/; 
     let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     let regexAge = /^\d+$/;
@@ -14,8 +14,8 @@ const handleData = (e) => {
     let age = document.getElementById("age").value;
     let dropdown = document.getElementById("dropdown").value;
     let radio = document.getElementById("radio").value; 
-    let checkbox = document.getElementById("checkbox");
-    let vibret = document.getElementById("vibret").value; 
+    let checkbox = document.getElementById("checkbox").checked;
+    let vibrate = document.getElementById("vibrate").value; 
 
     document.getElementById('username').style.border = '';
     document.getElementById('number').style.border = '';
@@ -24,7 +24,7 @@ const handleData = (e) => {
 
     if (!regexUsername.test(username)) {
         document.getElementById('username').style.border = '5px solid red';
-        alert("Invalid username. It should be alphanumeric and 3-15 characters long.");
+        alert("Invalid username. It should be alphanumeric and 2-16 characters long.");
         return;
     }
     if (!regexPhoneNumber.test(number)) {
@@ -53,7 +53,7 @@ const handleData = (e) => {
         dropdown: dropdown,
         radio: radio,
         checkbox: checkbox,
-        vibret: vibret
+        vibrate: vibrate
     };
 
     users.push(user);

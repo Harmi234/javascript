@@ -41,6 +41,31 @@ label {
     font-size: 16px;
 }
 
-#vibret {
-    background-color: #e8f4f8;
+#vibrate {
+    background-color: #ccab52;
+    color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: box-shadow 0.3s ease;
+    animation: vibrate 0.1s infinite;
+}
+
+@keyframes vibrate{
+    0% {transform: translate(0px,-1px)rotate(0deg);}
+    /* 10% {transform: translate(-1px,-2px)rotate(-1deg);}
+    20% {transform: translate(-3px,0px)rotate(1deg);}
+    30% {transform: translate(3px,2px)rotate(0deg);}
+    40% {transform: translate(1px,-1px)rotate(1deg);}
+    50% {transform: translate(-1px,2px)rotate(0deg);} */
+    /* 60% {transform: translate(-3px,1px)rotate(0deg);}
+    70% {transform: translate(3px,1px)rotate(-1deg);}
+    80% {transform: translate(-1px,-1px)rotate(1deg);}
+    90% {transform: translate(1px,2px)rotate(0deg);}
+    100% {transform: translate(1px,-2px)rotate(-1deg);} */
+}
+
+#vibrate:active{
+    box-shadow: 0 8px -20px rgb(0, 0, 0, 0.4);
 }

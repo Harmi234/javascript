@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <form name="form" id="ValidateForm">
+        <h2>Registration Form</h2>
+        <div class="box">
+            <label>Full name</label>
+            <input type="text" name="username" id="username">
+            <div class="error" id="usernameErr"></div>
+        </div>
+    
+        <div class="box">
+            <label>Email Address</label>
+            <input type="text" name="email" id="email">
+            <div class="error" id="emailErr"></div>
+        </div>
+    
+        <div class="box">
+            <label>Mobile Number</label>
+            <input type="text" name="number" id="number" maxlength="10">
+            <div class="error" id="numberErr"></div>
+        </div>
+    
+        <div class="box">
+            <label>Country</label>
+            <select name="country" id="country">
+                <option value="">Select</option>
+                <option value="india">India</option>
+                <option value="london">London</option>
+            </select>
+            <div class="error" id="countryErr"></div>
+        </div>
+    
+        <div class="box">
+            <label>Gender</label>
+            <div class="form-inline">
+                <label><input type="radio" name="gender" value="Male">Male</label>
+                <label><input type="radio" name="gender" value="Female">Female</label>
+            </div>
+            <div class="error" id="genderErr"></div>
+        </div>
+    
+        <div class="box">
+            <label>Vibrate</label>
+            <input type="checkbox" name="vibrate" id="vibrate">
+            <div class="error" id="vibrateErr"></div>
+        </div>
+    
+        <div class="box">
+            <input type="submit" value="Submit"/>
+        </div>
+    </form>
+    
+
+
+    <script src="./index.js"></script>
+</body>
+</html>
