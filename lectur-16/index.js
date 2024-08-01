@@ -1,22 +1,45 @@
-class Student{
-    constructor(name,number,grid,couse,fee){
-       this.name = name
-       this.number = number
-       this.grid = grid
-       this.couse = couse
-       this.fee = fee
+class Employe {
+    constructor(name, salary) {
+        this.name = name;
+        this.salary = salary;
     }
 
-    leave(name){
-        console.log("you can take leave")
+    leave() {
+        console.log(`${this.name} can take leave.`);
     }
-    exam(name){
-        console.log("congrats for first renk");
+
+    Salary(Salary) {
+        if (Salary < 0) {
+            console.log("Salary cannot be negative.");
+        }
+         else {
+            this.salary = Salary;
+            console.log(`salary for ${this.name}: ${this.salary}`);
+        }
     }
 }
 
-let stu = new Student("haemi",548264758,7391,"fullstack",55000)
-let Student2 = new Student("hemanshu",7546929,7392,"fullstack",50000)
-console.log(stu.number,Student2)
-Student2.leave();
-stu.exam();
+class Manager extends Employe {
+    constructor(name, salary, department) {
+        super(name, salary);
+        this.department = department;
+    }
+
+    assignTask(task) {
+        console.log(`${this.name} is assigning task: ${task}`);
+    }
+
+    leave() {
+        console.log(`${this.name} (Manager) can take leave.`);
+    }
+}
+
+let emp = new Employe("harmi", 50000);
+emp.leave();
+emp.Salary(55000);
+
+let mgr = new Manager("harmi", 80000, "IT");
+mgr.leave();
+mgr.Salary(85000);
+mgr.assignTask("Prepare annual report");
+console.log(mgr.department);

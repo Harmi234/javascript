@@ -1,5 +1,4 @@
 //Find the Largest Element
-
 let num = [5, 10, 21, 19, 12];
 let n = num.length
 let max = num[0];

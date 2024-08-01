@@ -5,6 +5,6 @@ let C = 9
 
 let sumAB = A + B ;
 let result = sumAB / C;
-let ans = sumAB % C; // remainder of the division.
+let ans = sumAB % C; 
 
 console.log("ans:",ans);

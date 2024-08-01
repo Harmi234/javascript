@@ -1,6 +1,6 @@
 //Remove Duplicates
 let array = [1, 2, 2, 3, 4, 4, 5];
-let n = array.length
+let n = array.length;
 function remove(array) {
     let Array = []; 
 
