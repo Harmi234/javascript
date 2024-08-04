@@ -1,20 +1,22 @@
 class Employe {
+    #name;
+    #salary;
+    
     constructor(name, salary) {
-        this.name = name;
-        this.salary = salary;
+        this.#name = name;
+        this.#salary = salary;
     }
 
     leave() {
-        console.log(`${this.name} can take leave.`);
+        console.log(`${this.#name} can take leave.`);
     }
 
-    Salary(Salary) {
-        if (Salary < 0) {
+    getSalary(salary) {
+        if (salary < 0) {
             console.log("Salary cannot be negative.");
-        }
-         else {
-            this.salary = Salary;
-            console.log(`salary for ${this.name}: ${this.salary}`);
+        } else {
+            this.#salary = salary;
+            console.log(`Salary for ${this.#name}: ${this.#salary}`);
         }
     }
 }
@@ -26,20 +28,20 @@ class Manager extends Employe {
     }
 
     assignTask(task) {
-        console.log(`${this.name} is assigning task: ${task}`);
+        console.log(`${this.name} is assigning task: ${task}`); 
     }
 
     leave() {
-        console.log(`${this.name} (Manager) can take leave.`);
+        console.log(`${this.name} (Manager) can take leave.`); 
     }
 }
 
-let emp = new Employe("harmi", 50000);
+let emp = new Employe("Harmi", 50000);
 emp.leave();
-emp.Salary(55000);
+emp.getSalary(55000);
 
-let mgr = new Manager("harmi", 80000, "IT");
+let mgr = new Manager("Harmi", 80000, "IT");
 mgr.leave();
-mgr.Salary(85000);
+mgr.getSalary(85000);
 mgr.assignTask("Prepare annual report");
 console.log(mgr.department);
