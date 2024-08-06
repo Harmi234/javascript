@@ -10,6 +10,12 @@ class Employe {
     leave() {
         console.log(`${this.#name} can take leave.`);
     }
+    getname(){
+        return this.#name;
+    }
+    setname(){
+        return this.#name;
+    }
 
     getSalary(salary) {
         if (salary < 0) {
@@ -28,11 +34,11 @@ class Manager extends Employe {
     }
 
     assignTask(task) {
-        console.log(`${this.name} is assigning task: ${task}`); 
+        console.log(`${this.getname()} is assigning task: ${task}`); 
     }
 
     leave() {
-        console.log(`${this.name} (Manager) can take leave.`); 
+        console.log(`${this.getname()} (Manager) can take leave.`); 
     }
 }
 
