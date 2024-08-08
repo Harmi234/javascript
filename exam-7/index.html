@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
+        <!-- counters -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- banner -->
+     <div class="container-fluid" id="bannrer">
+        <img src="https://image.tensorartassets.com/cdn-cgi/image/anim=false,plain=false,w=2048,f=jpeg,q=85/posts/images/619030424009789924/0cb03887-3d93-468a-a2e9-21f8cc586224.jpg"
+        alt="" width="100%" height="500px">
+     </div>
+    <!-- banner -->
+    <!-- Product Section -->
+    <section class="product-section" id="product-section">
+        <div class="product-card">
+            <img src="https://t4.ftcdn.net/jpg/05/63/96/77/360_F_563967731_wwGn0f1iz8l5Z9eHdZbjJUoaeatXmcbp.jpg"
+            alt="Product 1 Image" width="190px" height="">
+            <h5>Dragon</h5>
+            <p>Category: Dragon</p>
+            <p class="price">$39.99</p>
+            <p>A fire Dragon.</p>
+            <div class="button-container">
+                <button class="buy-button" onclick="Buy()">Buy</button>
+                <button class="delete-button" onclick="delete1(0)">Delete</button>
+            </div>
+        </div>
+        <div class="product-card">
+         <img src="https://t3.ftcdn.net/jpg/05/54/12/28/360_F_554122808_70uodDBTFvbJJjM8Fu9Vy24WHK614SXh.jpg"
+            alt="Product 1 Image" width="190px" height="">
+            <h5>Dragon</h5>
+            <p>Category: Dragon</p>
+            <p class="price">$29.99</p>
+            <p>A fire Dragon</p>
+            <div class="button-container">
+                <button class="buy-button" onclick="Buy()">Buy</button>
+                <button class="delete-button" onclick="delete1(1)">Delete</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://wallpapers.com/images/featured/dragon-tbrh9smwrlaa1cr9.jpg"
+            alt="Product 1 Image" width="190px" height="">
+            <h5>Dragon</h5>
+            <p>Category: Dragon</p>
+            <p class="price">$19.99</p>
+            <p>A Beautiful Dragon</p>
+            <div class="button-container">
+                <button class="buy-button" onclick="Buy()">Buy</button>
+                <button class="delete-button" onclick="delete1(2)">Delete</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSRJDDM_sPcVRuUFY3yBR70bsEtIuRSHfOBg&s"
+            alt="Product 1 Image" width="190px" height="">
+            <h5>Dragon</h5>
+            <p>Category: Dragon</p>
+            <p class="price">$40.99</p>
+            <p>A Beautiful Dragon</p>
+            <div class="button-container">
+                <button class="buy-button" onclick="Buy()">Buy</button>
+                <button class="delete-button" onclick="delete1(3)">Delete</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDlhcXS9BNn59q79jhjJamfOqfp1whlLesy3jK8-pdmAp3HZbyivA24IrqcV9636djqfU&usqp=CAU"
+            alt="Product 1 Image" width="190px" height="">
+            <h5>Dragon</h5>
+            <p>Category: Dragon</p>
+            <p class="price">$50.99</p>
+            <p>A fire Dragon</p>
+            <div class="button-container">
+                <button class="buy-button" onclick="Buy()">Buy</button>
+                <button class="delete-button" onclick="delete1(4)">Delete</button>
+            </div>
+        </div>
+
+    </section>
+     <!-- Product Section -->
+      <!-- form -->
+      <form id="Form" class="form-container">
+        <h2>Product Details</h2>
+    
+        <label for="Name">Product Name:</label>
+        <input type="text" id="Name" name="Name" placeholder="Product Name" required>
+    
+        <label for="Category">Product Category:</label>
+        <input type="text" id="Category" name="Category" placeholder="Product Category" required>
+    
+        <label for="price">Product Price:</label>
+        <input type="number" name="price" id="price" placeholder="Product Price" required>
+    
+        <label for="Description">Product Description:</label>
+        <textarea id="Description" name="Description" placeholder="Product Description" required></textarea>
+    
+        <button type="submit" id="ADD" class="btn btn-primary">ADD</button>
+    </form>
+      <!-- form -->
+
+
+     <!-- counter js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+          
+          
