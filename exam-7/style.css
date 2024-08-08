@@ -78,7 +78,7 @@
 
 /* form */
 .form-container {
-    background: #ffffff;
+    background: #f3a9a9;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -114,11 +114,13 @@ textarea {
     height: 120px;
     width: 100%;
     border: 1px solid #ced4da;
+    border-radius: 6px;
+
 } 
 
 .form-container button {
     padding: 12px 20px;
-    background: #1976d2;
+    background: #539de6;
     color: #ffffff;
     border: none;
     border-radius: 6px;

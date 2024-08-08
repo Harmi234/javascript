@@ -11,16 +11,22 @@ const delete1 = (index) => {
 
 const handleProductData = (e) => {
     e.preventDefault();
-    let data = {
-        Pname: document.getElementById('Name').value,
-        PCategory: document.getElementById('Category').value,
-        Pprice: document.getElementById('price').value,
-        PDescription: document.getElementById('Description').value
 
-    }
+    let data = {
+        name: document.getElementById('Name').value,
+        category: document.getElementById('Category').value,
+        price: document.getElementById('price').value,
+        description: document.getElementById('Description').value
+    };
+
     products.push(data);
     console.log(products);
-        
-}
-document.getElementById("product-section").addEventListener("Buy", handleProductData);
 
+    document.getElementById('Name').value = '';
+    document.getElementById('Category').value = '';
+    document.getElementById('price').value = '';
+    document.getElementById('Description').value = '';
+
+};
+
+document.getElementById("Form").addEventListener("submit", handleProductData);
