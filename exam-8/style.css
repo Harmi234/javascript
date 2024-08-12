@@ -1,0 +1,17 @@
+body {
+     font-family: Arial, sans-serif; 
+    }
+#todo-list {
+     list-style-type: none; 
+     padding: 0; 
+    }
+#todo-list li {
+     margin: 5px 0;
+     }
+#todo-list li span {
+     margin-right: 10px;
+     }
+.remove-btn { 
+    cursor: pointer;
+     color: red; 
+    }
