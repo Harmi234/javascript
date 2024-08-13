@@ -1,18 +1,18 @@
-const todoInput = document.getElementById('todoInput');
-const addTodoBtn = document.getElementById('addTodoBtn');
-const todoList = document.getElementById('todoList');
+let todoInput = document.getElementById('todoInput');
+let addTodoBtn = document.getElementById('addTodoBtn');
+let todoList = document.getElementById('todoList');
 
 document.addEventListener('DOMContentLoaded', loadTodos);
 
 addTodoBtn.addEventListener('click', addTodo);
 
 function loadTodos() {
-    const todos = JSON.parse(localStorage.getItem('todos')) || [];
+    let todos = JSON.parse(localStorage.getItem('todos')) || [];
     todos.forEach(todo => addTodoToDOM(todo));
 }
 
 function addTodo() {
-    const todo = todoInput.value.trim();
+    let todo = todoInput.value.trim();
     if (todo) {
         addTodoToDOM(todo);
         saveTodoToLocalStorage(todo);
@@ -21,11 +21,11 @@ function addTodo() {
 }
 
 function addTodoToDOM(todo) {
-    const li = document.createElement('li');
+    let li = document.createElement('li');
     li.className = 'todo-item';
     li.textContent = todo;
 
-    const removeBtn = document.createElement('button');
+    let removeBtn = document.createElement('button');
     removeBtn.textContent = 'Remove';
     removeBtn.className = 'remove-btn';
     removeBtn.addEventListener('click', () => {
@@ -37,7 +37,7 @@ function addTodoToDOM(todo) {
 }
 
 function saveTodoToLocalStorage(todo) {
-    const todos = JSON.parse(localStorage.getItem('todos')) || [];
+    let todos = JSON.parse(localStorage.getItem('todos')) || [];
     todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(todos));
 }
