@@ -1,0 +1,30 @@
+ body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+    margin: 0;
+}
+
+.main-container {
+    text-align: center;
+    color: white;
+}
+
+.dice {
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 20px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+} 
+
+
