@@ -1,0 +1,65 @@
+.img {
+    width: 80%;
+    height: 100vh;
+    margin: 20px 0 20px 115px;
+}
+
+.main-contain {
+    margin: 30px 0 30px 150px;
+    width: 80%;
+    box-shadow: 8px 8px 20px #e2e5e9;
+    transition: box-shadow 0.3s ease;
+}
+
+.main-contain:hover {
+    box-shadow: 0 0 30px #0c0e10;
+}
+
+button {
+    margin: 20px 0 20px 130px;
+    padding: 18px;
+    width: 130px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+button:hover{
+    box-shadow: 0 0 30px #2163a5;
+}
+
+@media (max-width: 768px) {
+    .img {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .main-contain {
+        margin-left: 20px;
+        width: 90%;
+    }
+
+    button {
+        margin-left: 20px;
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .img {
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .main-contain {
+        margin: 10px;
+        width: 95%;
+    }
+
+    button {
+        margin-left: 0;
+        width: 100%;
+        padding: 15px;
+    }
+}
