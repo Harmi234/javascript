@@ -6,33 +6,33 @@
     let commentCount = parseInt(sessionStorage.getItem('commentCount')) || 0;
     let subscribeCount = parseInt(sessionStorage.getItem('subscribeCount')) || 0;
 
-    document.getElementById("likeCount").textContent = likeCount;
-    document.getElementById("shareCount").textContent = shareCount;
-    document.getElementById("commentCount").textContent = commentCount;
-    document.getElementById("subscribeCount").textContent = subscribeCount;
+    document.getElementById("likeCount").innerHTML = likeCount;
+    document.getElementById("shareCount").innerHTML = shareCount;
+    document.getElementById("commentCount").innerHTML = commentCount;
+    document.getElementById("subscribeCount").innerHTML = subscribeCount;
 
 
     const handleLikeCount = () => {
         likeCount++; 
-        document.getElementById("likeCount").textContent = likeCount; 
+        document.getElementById("likeCount").innerHTML = likeCount; 
         localStorage.setItem("likeCount", likeCount);
     }
 
     const handleShareCount = () => {
         shareCount++; 
-        document.getElementById("shareCount").textContent = shareCount; 
+        document.getElementById("shareCount").innerHTML = shareCount; 
         localStorage.setItem("shareCount", shareCount);
     }
 
     const handleCommentCount = () => {
         commentCount++; 
-        document.getElementById("commentCount").textContent = commentCount; 
+        document.getElementById("commentCount").innerHTML = commentCount; 
         sessionStorage.setItem("commentCount", commentCount);
     }
 
     const handleSubscribeCount = () => {
         subscribeCount++; 
-        document.getElementById("subscribeCount").textContent = subscribeCount; 
+        document.getElementById("subscribeCount").innerHTML = subscribeCount; 
         sessionStorage.setItem("subscribeCount", subscribeCount);
     }
 
