@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Button Example</title>
+   <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">Logo</div>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Add News</li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="main-content">
+            <header>
+                <h1>News App</h1>
+            </header>
+            <div class="news-items">
+                <!-- News Items will be dynamically inserted here -->
+            </div>
+        </section>
+        <section class="form-section">
+            <h2>Add News</h2>
+            <form id="news-form">
+                <input type="text" id="title" placeholder="Title" required>
+                <input type="url" id="image-url" placeholder="Image URL" required>
+                <textarea id="content" placeholder="Content" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+
+
+</body>
+<script src="./index.js"></script>
+</html>

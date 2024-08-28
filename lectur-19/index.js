@@ -25,7 +25,7 @@ if(myData.age){
     ageElement.innerHTML = myData.age;
 }
 
-nameInput.addEventListener('input',(e) =>{
+nameInput.addEventListener('input',(e) => {
   myData.name = e.target.value;
   localStorage.setItem('myData',JSON.stringify(myData));
   nameElement.innerHTML = e.target.value;

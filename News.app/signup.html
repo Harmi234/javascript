@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>signup page</h1>
+    <div id="signupContainer">
+        <form id="signupForm">
+            <input type="url" id="imgUrl" placeholder="Image URL" required>
+            <input type="text" id="name" placeholder="Name" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="signupInfo"></div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let signupForm = document.getElementById('signupForm');
+        let signupInfo = document.getElementById('signupInfo');
+
+    signupForm.addEventListener('submit', (e) => {
+        e.preventDefault(); 
+
+        let imgUrl = document.getElementById('imgUrl').value;
+        let name = document.getElementById('name').value;
+
+        signupInfo.innerHTML = `
+            <h3>Signup Information</h3>
+            <p>Name: ${name}</p>
+            <p>Image: <img src="${imgUrl}" width="100"></p>
+        `;
+
+        signupForm.reset();
+    });
+    });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News app</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">add News</a></li>
+            <li><a href="./signup.html">sign up</a></li>
+        </ul>
+    </header>
+    <div class="layout">
+        <div class="sidebar">
+            <div class="logo-section">
+                <img src="./img/logo.png" alt="Logo" class="logo">
+                <h2>sign up page</h2>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Top News</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <main class="content">
+            <h2>User Information</h2>
+            <form id="userForm">
+                <label for="name">Name : </label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="email">Email : </label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="imgUrl">Image URL : </label>
+                <input type="url" id="imgUrl" name="imgUrl" required><br>
+
+                <label for="password">Password : </label>
+                <input type="password" id="password" name="password" required><br>
+
+                <label for="country">Country : </label>
+                <input type="text" id="country" name="country" required><br>
+
+                <button type="submit">Submit</button>
+            </form>
+            <div id="userInfoContainer" class="flex-container">
+                <div id="userInfo"></div>
+            </div>
+        </main>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
