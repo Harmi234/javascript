@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1>Add News</h1>
+    <form id="newsForm">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="category">Category:</label><br>
+        <input type="text" id="category" name="category" required><br><br>
+
+        <label for="image">Image URL:</label><br>
+        <input type="url" id="image" name="image"><br><br>
+
+        <button type="submit">Add News</button>
+    </form>
+
+    <h2>News List</h2>
+    <div id="newsList"></div>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', () => {
+            let userForm = JSON.parse(localStorage.getItem("userForm")) || [];
+
+            const displayNews = (userForm) => {
+                let newsList = document.getElementById("newsList");
+                newsList.innerHTML = ""; 
+
+                userForm.forEach((ele, index) => {
+                    let title = document.createElement("h3");
+                    title.textContent = ele.title;
+                    let img = document.createElement("img");
+                    img.src = ele.img;
+                    img.style.maxWidth = "200px";
+                    let category = document.createElement("p");
+                    category.textContent = ele.category;
+                    let btnDlt = document.createElement("button");
+                    btnDlt.textContent = "Delete";
+                    btnDlt.addEventListener("click", () => handleDelete(index));  
+                    let div = document.createElement("div");
+                    div.append(img, title, category, btnDlt);
+
+                    newsList.append(div);
+                });
+            };
+
+            const handleDelete = (index) => {
+                userForm.splice(index, 1);  
+                localStorage.setItem("userForm", JSON.stringify(userForm));  
+                displayNews(userForm);  
+            }
+
+            document.getElementById('newsForm').addEventListener('submit', (e) => {
+                e.preventDefault(); 
+
+                let title = document.getElementById('title').value;
+                let category = document.getElementById('category').value;
+                let image = document.getElementById('image').value;
+
+                let newNews = {
+                    title: title,
+                    img: image,
+                    category: category
+                };
+
+                userForm.push(newNews);
+                localStorage.setItem("userForm", JSON.stringify(userForm));
+
+                displayNews(userForm);
+
+                e.target.reset();
+            });
+
+            displayNews(userForm);
+        });
+</script>
+</body>
+
+</html>
