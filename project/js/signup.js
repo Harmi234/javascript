@@ -17,7 +17,7 @@ const handleData = (e) => {
     users.push(user);
     localStorage.setItem("users", JSON.stringify(users));
 
-    window.location.href="/index.html"
+    window.location.href="/project/index.html"
 };
 
 document.querySelector("#userData").addEventListener("submit", handleData);
