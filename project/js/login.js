@@ -1,4 +1,3 @@
-
 import getValue from "../component/helper.js";
 import Navbar from "../component/navbar.js";
 
@@ -31,3 +30,4 @@ const handleData = (e) => {
 };
 
 document.querySelector("#userData").addEventListener("submit", handleData);
+
