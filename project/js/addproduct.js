@@ -2,7 +2,6 @@ import getValue from "../component/helper.js";
 import Navbar from "../component/navbar.js";
 
 document.getElementById('navbar').innerHTML = Navbar();
-
 let isLogin = localStorage.getItem('isLogin') || false;
 
 if(isLogin == false){
