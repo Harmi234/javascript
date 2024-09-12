@@ -1,8 +1,10 @@
 const Navbar = () => {
-
-  let isLogin = localStorage.getItem('isLogin') || false;
+  
+  let isLogin = localStorage.getItem('isLogin') || false
   let username = localStorage.getItem('username')
-  return `
+
+  return`
+  
     <nav class="navbar navbar-expand-lg bg-body-tertiary ">
             <div class="container-fluid">
               <a class="navbar-brand" href="/project/index.html">Navbar</a>
@@ -44,7 +46,8 @@ const Navbar = () => {
               </div>
             </div>
           </nav>
-  `;
+
+  `
 }
 
-export default Navbar;
+export default Navbar

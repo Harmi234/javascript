@@ -15,7 +15,7 @@ const handleData = (e) => {
 
     users.push(user);
     localStorage.setItem("users", JSON.stringify(users));
-
+    alert("Signup successful!");
     window.location.href="/project/index.html"
 };
 

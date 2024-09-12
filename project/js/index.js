@@ -1,3 +1,5 @@
 import Navbar from "../component/navbar.js";
 
-document.getElementById('navbar').innerHTML = Navbar();
+
+
+document.getElementById("navbar").innerHTML = Navbar()

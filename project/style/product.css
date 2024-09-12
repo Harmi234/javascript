@@ -1,9 +1,84 @@
-#productList{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
+/* styles.css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif; 
 }
 
 
-#productList div img {
-    width: 200px;
+#navbar {
+    margin-bottom: 20px;
+}
+
+#filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#filters button {
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#filters button:hover {
+    background-color: #0056b3;
+}
+
+/* #productList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+} */
+#productList {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    justify-content: center;
+    gap: 20px;
+}
+
+#productList div {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px; 
+    text-align: center;
+}
+
+#productList img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#productList h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+#productList p {
+    margin: 5px 0;
+    color: #6c757d; 
+}
+
+#productList button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#productList button:hover {
+    background-color: #218838; 
 }
