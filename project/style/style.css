@@ -1,61 +1,177 @@
-body {
+*{
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+.banner-section img{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+.banner-btn button{
+    width: 180px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.banner-btn button:hover{
+    border: 1px solid white;
 }
 
-.slider {
+/* galary */
+/* Style the hover effect */
+.col-lg-4 {
     position: relative;
-    max-width: 100%;
-    width: 100%;
-    height: 100vh;
-    margin: auto;
     overflow: hidden;
 }
 
-.slides {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.slide {
-    min-width: 100%;
-    box-sizing: border-box;
-}
-
-.slide img {
+.col-lg-4 img {
+    transition: transform 0.3s ease;
     width: 100%;
-    height: auto;
+    display: block;
 }
 
-.caption {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: #fff;
-    font-size: 24px;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px;
+/* Image hover effect */
+.col-lg-4 img:hover {
+    transform: scale(1.05); /* Reduced scale factor for a more subtle effect */
+    border-radius: 10px;
 }
 
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    cursor: pointer;
-    border-radius: 3px;
+.icon-arrow {
+    width: 20px; /* Adjust width */
+    height: 15px; /* Adjust height */
 }
 
-.prev {
-    left: 0;
+/* vedio */
+/* Maintain hover effect for images */
+.col-lg-4 img, .col-lg-4 video {
+    transition: transform 0.3s ease;
 }
 
-.next {
-    right: 0;
+.col-lg-4 img:hover, .col-lg-4 video:hover {
+    transform: scale(1.1); /* Hover effect for both images and videos */
 }
+
+/* Optional: style the video */
+video {
+    border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.video-scroll-container {
+    overflow-x: scroll; 
+    overflow-y: hidden; 
+    white-space: nowrap; 
+    padding: 10px 0;
+  }
+  
+  .video-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .video-scroll-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+  }
+  
+  .video-wrapper {
+    display: flex;
+  }
+  
+  .video-item {
+    flex: 0 0 auto;
+    margin-right: 10px; 
+    border-radius: 2px;
+  }
+  
+  .video-class {
+    border-radius: 2px;
+  }
+  
+  .img-fluid{
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        transform: scale(1.05);
+      }
+  }
+  .grab-img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .insta-img{
+    max-width: 100%;
+  }
+  /* General Styles */
+.footer-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .email {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 992px) {
+    /* For medium devices (tablets and large phones) */
+    .footer-links ul {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .email {
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* For smaller devices (landscape phones) */
+    .footer-links ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .email {
+      width: 70%;
+    }
+  
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-bottom img {
+      margin-top: 10px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    /* For extra small devices (portrait phones) */
+    .email {
+      width: 90%;
+    }
+  
+    .footer-links ul {
+      gap: 5px;
+    }
+  }
+  
+
+  
