@@ -11,19 +11,27 @@
   height: 100vh;
   position: absolute;
 }
-.banner-btn button{
-    width: 180px;
-  display: flex;
-  justify-content: center;
+.banner-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 200px; 
+  width: 100%;
   text-align: center;
-  align-items: center;
+}
+
+.banner-btn button {
+  width: 100%; 
+  padding: 10px; 
+  font-size: 16px; 
+  max-width: 200px; 
 }
 .banner-btn button:hover{
     border: 1px solid white;
 }
 
 /* galary */
-/* Style the hover effect */
 .col-lg-4 {
     position: relative;
     overflow: hidden;
@@ -37,23 +45,22 @@
 
 /* Image hover effect */
 .col-lg-4 img:hover {
-    transform: scale(1.05); /* Reduced scale factor for a more subtle effect */
+    transform: scale(1.05); 
     border-radius: 10px;
 }
 
 .icon-arrow {
-    width: 20px; /* Adjust width */
-    height: 15px; /* Adjust height */
+    width: 20px; 
+    height: 15px; 
 }
 
 /* vedio */
-/* Maintain hover effect for images */
 .col-lg-4 img, .col-lg-4 video {
     transition: transform 0.3s ease;
 }
 
 .col-lg-4 img:hover, .col-lg-4 video:hover {
-    transform: scale(1.1); /* Hover effect for both images and videos */
+    transform: scale(1.1); 
 }
 
 /* Optional: style the video */
@@ -93,6 +100,11 @@ video {
     border-radius: 2px;
   }
   
+  /* img {
+    max-width: 100%;
+    height: auto; 
+  } */
+
   .img-fluid{
     transform: scale(1);
     transition: all 0.3s ease-in-out;
@@ -100,6 +112,21 @@ video {
         transform: scale(1.05);
       }
   }
+  @media (max-width: 768px) {
+    h4 {
+      font-size: 1rem; /* Reduce font size on smaller screens */
+    }
+
+    img {
+      height: auto; /* Allow height to adjust dynamically */
+    }
+
+    .col-sm-6 {
+      flex: 0 0 100%;
+      max-width: 100%; /* Make columns stack vertically on mobile */
+    }
+  }
+
   .grab-img{
     background-position: center;
     background-repeat: no-repeat;
@@ -130,7 +157,6 @@ video {
   
   /* Media Queries */
   @media (max-width: 992px) {
-    /* For medium devices (tablets and large phones) */
     .footer-links ul {
       flex-direction: column;
       gap: 15px;
@@ -142,7 +168,6 @@ video {
   }
   
   @media (max-width: 768px) {
-    /* For smaller devices (landscape phones) */
     .footer-links ul {
       flex-direction: column;
       gap: 10px;
@@ -163,7 +188,6 @@ video {
   }
   
   @media (max-width: 576px) {
-    /* For extra small devices (portrait phones) */
     .email {
       width: 90%;
     }
