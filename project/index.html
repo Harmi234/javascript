@@ -95,7 +95,7 @@
 
   <!-- vedio section start -->
   <section>
-    <h3 class="mt-0 mb-0 p-3" style="color: gray;">SHOP BY VIDEOS</h2>
+    <h3 class=" mt-0 mb-0 p-3" style="color: gray;">SHOP BY VIDEOS</h2>
       <div class="video-scroll-container">
         <div class="video-wrapper">
           <!-- Video 1 -->
@@ -376,7 +376,29 @@
   <!-- footer end -->
 
 
+  
+  <script src="/project/js/navbar.js" type="module"></script>
+  <script type="module">
+    import Navbar from '/project/component/navbar.js';
 
+    document.getElementById('navbar').innerHTML = Navbar();
+  
+  // Logout functionality
+  document.getElementById('navbar').addEventListener("click", (e) => {
+    if (e.target.textContent === "Logout") {
+      e.preventDefault();
+      
+      const confirmation = confirm("Are you sure you want to logout?");
+      if (confirmation) {
+        localStorage.removeItem("username");
+        localStorage.removeItem("isLogin");
+        
+        alert("You have successfully logged out!");
+        window.location.href = "/project/pages/login.html";
+      }
+    }
+  });
+  </script>
 
 
 

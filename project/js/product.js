@@ -83,14 +83,15 @@ document.getElementById("men").addEventListener("click", () => handleCategory("m
 document.getElementById("women").addEventListener("click", () => handleCategory("women"));
 document.getElementById("electronics").addEventListener("click", () => handleCategory("electronics"));
 
-// serching
+// searching
 
 const search = (e) => {
     e.preventDefault();
-
-    let searchValue = getValue('#search');
+  
+    let searchValue = document.getElementById('search').value;
     let temp = products.filter((ele) => ele.title.toLowerCase().includes(searchValue.toLowerCase()));
     mapper(temp);
-};
-
-document.getElementById("searching").addEventListener("submit", search);
+  };
+  
+  document.getElementById("searching").addEventListener("submit", search);
+  

@@ -1,86 +1,110 @@
+import { createTag } from "../component/helper.js";
 import Navbar from "../component/navbar.js";
 document.getElementById("navbar").innerHTML = Navbar()
 
-// cart.js
+let cart = JSON.parse(localStorage.getItem("cart")) || []
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const remove = (index) => {
+    // let temp = cart.filter((item) => item.id != id)
+    // cart = temp
+    // localStorage.setItem("cart", JSON.stringify(cart))
+    // mapper(cart)
+    cart.splice(index, 1)
+    localStorage.setItem("cart", JSON.stringify(cart))
+    mapper(cart)
+}
 
-// Function to render the cart
-const renderCart = () => {
-  const cartBody = document.getElementById("cart-body");
-  let totalPrice = 0;
+const handleQty = (opr, index) => {
+    if (opr == "+") {
+        cart[index].qty += 1
+        localStorage.setItem("cart", JSON.stringify(cart))
+    }
+    else {
 
-  cartBody.innerHTML = ""; 
-  cart.forEach((item, index) => {
-    let tr = document.createElement("tr");
+        if (cart[index].qty > 1) {
+            cart[index].qty -= 1
+            localStorage.setItem("cart", JSON.stringify(cart))
+        }
+        else {
+            remove(index)
+        }
 
-    // Product Image
-    let td1 = document.createElement("td");
-    let img = document.createElement("img");
-    img.src = item.img; // Assuming you have an `img` field in the product object
-    img.alt = item.title;
-    img.style.width = "100px"; // Set the width for image
-    td1.appendChild(img);
+    }
+    mapper(cart)
 
-    // Product Title
-    let td2 = document.createElement("td");
-    td2.textContent = item.title;
+}
 
-    // Product Price
-    let td3 = document.createElement("td");
-    td3.textContent = `$${item.price}`;
 
-    // Quantity with increase and decrease buttons
-    let td4 = document.createElement("td");
-    let qtyContainer = document.createElement("div");
-    let decreaseBtn = document.createElement("button");
-    decreaseBtn.textContent = "-";
-    decreaseBtn.addEventListener("click", () => updateQuantity(index, -1));
+//         btn1.addEventListener("click", () => handleQty("-", i));
+//         btn3.addEventListener("click", () => handleQty("+", i));
 
-    let increaseBtn = document.createElement("button");
-    increaseBtn.textContent = "+";
-    increaseBtn.addEventListener("click", () => updateQuantity(index, 1));
+//         let td4 = createTag("td", ele.price)
+//         let td5 = createTag("td", ele.qty * ele.price)
+//         let td6 = createTag("td", "remove")
+//         td6.addEventListener("click", () => remove(i))
 
-    let qtyDisplay = document.createElement("span");
-    qtyDisplay.textContent = item.qty;
-    
-    qtyContainer.append(decreaseBtn, qtyDisplay, increaseBtn);
-    td4.appendChild(qtyContainer);
+//         tr.append(td1, td2, td3, td4, td5, td6)
 
-    // Total Price for the product
-    let td5 = document.createElement("td");
-    let total = item.price * item.qty;
-    td5.textContent = `$${total}`;
+//         document.getElementById("cartItem").append(tr)
+//         totalPrice += productTotal;
 
-    // Remove button
-    let td6 = document.createElement("td");
-    let removeButton = document.createElement("button");
-    removeButton.className = "btn btn-danger";
-    removeButton.textContent = "Remove";
-    removeButton.addEventListener("click", () => removeFromCart(index));
-    td6.appendChild(removeButton);
+//     });
+//     document.getElementById("total-price").textContent = `Total Price: $${totalPrice}`;
 
-    tr.append(td1, td2, td3, td4, td5, td6);
-    cartBody.appendChild(tr);
+// }
 
-    totalPrice += total;
-  });
+// mapper(cart)
 
-  document.getElementById("total-price").textContent = `Total Price: $${totalPrice}`;
-};
+const mapper = (cart) => {
+    document.getElementById("cartItem").innerHTML = ""
+    let totalPrice = 0;
 
-const updateQuantity = (index, change) => {
-  if (cart[index].qty + change > 0) {
-    cart[index].qty += change;
-  }
-  localStorage.setItem("cart", JSON.stringify(cart));
-  renderCart(); 
-};
+    cart.map((ele, i) => {
+        let tr = createTag("tr", "")
+        let td1 = createTag("td", "")
+        let img = createTag("img", ele.img)
+        img.setAttribute("class", "img")
+        td1.append(img)
 
-const removeFromCart = (index) => {
-  cart.splice(index, 1); 
-  localStorage.setItem("cart", JSON.stringify(cart)); 
-  renderCart(); 
-};
+        let td2 = createTag("td", ele.title)
+        // qty
+        let td3 = createTag("td", "")
+        let btn1 = createTag("button", "-")
+        let btn2 = createTag("button", ele.qty)
+        let btn3 = createTag("button", "+")
+        td3.append(btn1, btn2, btn3)
 
-renderCart();
+        btn1.addEventListener("click", () => handleQty("-", i));
+        btn3.addEventListener("click", () => handleQty("+", i));
+
+         let td4 = createTag("td", `$${ele.price}`)
+         let productTotal = ele.qty * ele.price; 
+         let td5 = createTag("td", `$${productTotal}`) 
+         let td6 = createTag("td", "remove")
+         td6.addEventListener("click", () => remove(i))
+
+        tr.append(td1, td2, td3, td4, td5, td6)
+
+        document.getElementById("cartItem").append(tr)
+
+        totalPrice += productTotal;
+    });
+
+    document.getElementById("total-price").textContent = `Total Price: $${totalPrice}`;
+}
+
+mapper(cart)
+
+// checkout
+document.getElementById("checkout-btn").addEventListener("click", () => {
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+    } else {
+        alert("Proceeding to checkout...");
+
+        cart = []; 
+        localStorage.removeItem("cart"); 
+
+        mapper(cart); 
+    }
+});

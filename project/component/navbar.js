@@ -34,8 +34,9 @@ const Navbar = () => {
                     <a class="nav-link active" href="/project/pages/signup.html">${isLogin ? username : "signup"}</a>
                   </li>
                 </ul>
-                <form class="d-flex" role="search">
+                <form id="searching" class="d-flex" role="search">
                   <input
+                    id="search"
                     class="form-control me-2"
                     type="search"
                     placeholder="Search"

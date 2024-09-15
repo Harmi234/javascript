@@ -1,7 +1,5 @@
 import Navbar from "../component/navbar.js";
 
-
-
 document.getElementById("navbar").innerHTML = Navbar()
 
 
@@ -32,8 +30,7 @@ function prevSlide() {
     showSlide(currentIndex - 1);
 }
 
-// Initialize slider
 showSlide(currentIndex);
 
-// Auto-slide every 5 seconds
 setInterval(nextSlide, 5000);
+
