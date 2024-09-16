@@ -377,7 +377,6 @@
 
 
   
-  <script src="/project/js/navbar.js" type="module"></script>
   <script type="module">
     import Navbar from '/project/component/navbar.js';
 
@@ -385,7 +384,7 @@
   
   // Logout functionality
   document.getElementById('navbar').addEventListener("click", (e) => {
-    if (e.target.textContent === "Logout") {
+    if (e.target.innerHTML === "Logout") {
       e.preventDefault();
       
       const confirmation = confirm("Are you sure you want to logout?");

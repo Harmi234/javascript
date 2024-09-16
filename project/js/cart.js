@@ -34,27 +34,6 @@ const handleQty = (opr, index) => {
 
 }
 
-
-//         btn1.addEventListener("click", () => handleQty("-", i));
-//         btn3.addEventListener("click", () => handleQty("+", i));
-
-//         let td4 = createTag("td", ele.price)
-//         let td5 = createTag("td", ele.qty * ele.price)
-//         let td6 = createTag("td", "remove")
-//         td6.addEventListener("click", () => remove(i))
-
-//         tr.append(td1, td2, td3, td4, td5, td6)
-
-//         document.getElementById("cartItem").append(tr)
-//         totalPrice += productTotal;
-
-//     });
-//     document.getElementById("total-price").textContent = `Total Price: $${totalPrice}`;
-
-// }
-
-// mapper(cart)
-
 const mapper = (cart) => {
     document.getElementById("cartItem").innerHTML = ""
     let totalPrice = 0;

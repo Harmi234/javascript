@@ -99,11 +99,6 @@ video {
   .video-class {
     border-radius: 2px;
   }
-  
-  /* img {
-    max-width: 100%;
-    height: auto; 
-  } */
  
   .img-fluid{
     transform: scale(1);
@@ -114,16 +109,16 @@ video {
   }
   @media (max-width: 768px) {
     h4 {
-      font-size: 1rem; /* Reduce font size on smaller screens */
+      font-size: 1rem; 
     }
 
     img {
-      height: auto; /* Allow height to adjust dynamically */
+      height: auto; 
     }
 
     .col-sm-6 {
       flex: 0 0 100%;
-      max-width: 100%; /* Make columns stack vertically on mobile */
+      max-width: 100%; 
     }
   }
 
