@@ -3,127 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Page</title>
-   <style>
-    body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-.signup-container {
-    width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center-align the content */
-}
-
-.logo-container {
-    margin-bottom: 20px;
-}
-
-.signup-logo {
-    width: 100px; /* Adjust the width of the logo */
-    height: auto;
-}
-
-h2 {
-    color: #333;
-}
-
-.form-group {
-    margin-bottom: 15px;
-    text-align: left; /* Align labels and inputs */
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #555;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-.btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
-
-p {
-    margin-top: 10px;
-    color: #555;
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-   </style>
+    <title>My LocalStorage Project</title>
 </head>
 <body>
+    <h1>Welcome to My Project</h1>
 
-<div class="signup-container">
-    <!-- Image at the top -->
-    <div class="logo-container">
-        <img src="logo.png" alt="Logo" class="signup-logo">
-    </div>
-    
-    <h2>Signup</h2>
-    <form id="signupForm">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter username" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter email" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter password" required>
-        </div>
-        <button type="submit" class="btn">Sign Up</button>
-    </form>
-    <p>Already have an account? <a href="#">Login here</a></p>
-</div>
+    <input type="text" id="username" placeholder="Enter your name">
+    <button onclick="storeUsername()">Save Username</button>
+    <button onclick="showUsername()">Show Username</button>
 
-<script src="./index.js"></script>
+    <script>
+        function storeUsername() {
+            const name = document.getElementById('username').value;
+            localStorage.setItem('username', name);
+        }
 
+        function showUsername() {
+            const storedName = localStorage.getItem('username');
+            alert(storedName);
+        }
+    </script>
+
+<h1>To-Do List with LocalStorage</h1>
+
+<input type="text" id="taskInput" placeholder="Enter a task">
+<button onclick="addTask()">Add Task</button>
+
+<div id="taskList"></div>
+
+<script>
+    // Load tasks from localStorage when the page loads
+    window.onload = loadTasks;
+
+    function addTask() {
+        const taskInput = document.getElementById('taskInput');
+        const task = taskInput.value;
+        if (task) {
+            const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            tasks.push(task);
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            taskInput.value = ''; // Clear input field
+            loadTasks(); // Update displayed task list
+        }
+    }
+
+    function loadTasks() {
+        const taskList = document.getElementById('taskList');
+        taskList.innerHTML = ''; // Clear current list
+        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+        tasks.forEach((task, index) => {
+            const taskDiv = document.createElement('div');
+            taskDiv.classList.add('task');
+            taskDiv.innerHTML = `<span>${task}</span><button onclick="deleteTask(${index})">Delete</button>`;
+            taskList.appendChild(taskDiv);
+        });
+    }
+
+    function deleteTask(index) {
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks.splice(index, 1); // Remove the task by index
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+        loadTasks(); // Update the list
+    }
+</script>
 </body>
 </html>
