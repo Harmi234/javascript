@@ -29,7 +29,6 @@ const displayStudents = (students) => {
 
 displayStudents(students);
 
-
 // Search 
 const search = (e) => {
     e.preventDefault();
@@ -42,3 +41,39 @@ const search = (e) => {
 };
 
 document.getElementById("searching").addEventListener("submit", search);
+
+// Sorting
+const handleSort = (orderBy) => {
+    if (orderBy === "lth") {
+        let temp = students.sort((a, b) => a.fee - b.fee);
+        displayStudents(temp);
+    } else {
+        let temp = students.sort((a, b) => b.fee - a.fee);
+        displayStudents(temp);
+    }
+};
+
+document.getElementById("lth").addEventListener("click", () => handleSort("lth"));
+document.getElementById("htl").addEventListener("click", () => handleSort("htl"));
+
+// filter 
+const generateCourseFilters = (students) => {
+    const courses = [...new Set(students.map(student => student.course))];
+    const courseFilterDiv = document.getElementById('course-filters');
+    courseFilterDiv.innerHTML = '';
+    
+    courses.forEach(course => {
+        let button = document.createElement('button');
+        button.classList.add('btn', 'btn-secondary', 'me-2');
+        button.innerHTML = `${course}`;
+        button.addEventListener('click', () => handleCourseFilter(course));
+        courseFilterDiv.appendChild(button);
+    });
+};
+
+const handleCourseFilter = (course) => {
+    let filteredStudents = students.filter(student => student.course === course);
+    displayStudents(filteredStudents);
+};
+
+generateCourseFilters(students);
