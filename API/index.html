@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#productList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px;
+    padding: 20px;
+}
+
+#productList h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: #f6d3d3;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+#productList h2:hover {
+    transform: scale(1.05);
+    background-color: #fcb9b9;
+}
+
+#productList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f4eeee;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.product img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.product p {
+    margin: 5px 0;
+    font-size: 1.2rem;
+}
+
+.product p:nth-of-type(2) {
+    font-size: 0.9rem;
+    color: #424141;
+}
+
+.product p:nth-of-type(4),
+.product p:nth-of-type(5) {
+    font-size: 0.85rem;
+    color: #4a4949;
+}
+
+
+    </style>
+</head>
+<body>
+    
+    
+
+    <script src="./index.js"></script>
+</body>
+</html>
