@@ -5,18 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #productList {
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
-    gap: 16px; 
-    padding: 16px; 
-   }
-   .product{
-    box-shadow: black;
-   }
+       #productList {
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+            gap: 16px; 
+            padding: 16px; 
+        }
+        .product {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            background-color: #fff;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        
     </style>
 </head>
 <body>
+
+        <input type="text" id="searchInput" placeholder="Search by title">
+
+        <!-- sort -->
+         <select id="sortSelect">
+            <option value="price">Sort by Price</option>
+            <option value="rating">Sort by Rating</option>
+            <option value="title">Sort by Title</option>
+        </select>
+    
+        <!-- filter -->
+        <select id="filterSelect">
+            <option value="makeup">Makeup</option>
+            <option value="furniture">Furniture</option>
+        </select> 
+       
 
     <div id="productList"></div>
 
