@@ -13,7 +13,7 @@ const getData = async () => {
 
 getData();
 
-console.log("setting stat");
+console.log("getting stat");
 
 const mapper = (data) => {
     const productList = document.getElementById("productList");

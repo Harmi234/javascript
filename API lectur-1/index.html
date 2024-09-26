@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+     body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.10);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(12px); 
+    border: 2px solid rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+    opacity: rgba(0,0,0,0.40);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #211f1f;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+header input[type="text"] {
+    padding: 12px;
+    font-size: 1em;
+    width: 80%;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+header input[type="submit"] {
+    padding: 10px 25px;
+    font-size: 1em;
+    background-color: #0e1012;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+header input[type="submit"]:hover {
+    background-color: #2a2d30;
+}
+
+.weather-display {
+    margin: 20px 0;
+    padding: 25px;
+    background-color: rgba(233, 236, 239, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #444;
+}
+
+      body::before {
+        content: "";
+        background: url("https://images.pexels.com/photos/912364/pexels-photo-912364.jpeg?cs=srgb&dl=pexels-brett-sayles-912364.jpg&fm=jpg") no-repeat center center;
+        background-size: cover;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1; 
+        opacity: 0.3; 
+      }
+
+      .background-img {
+        height: 200px;
+        width: 200px;
+        display: none; 
+      }
+
+      .datetime {
+        margin-top: 40px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        font-size: 1.2em;
+      }
+
+      .date span,
+      .time span {
+        display: inline-block;
+        margin: 0 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+         <img
+          src="https://images.pexels.com/photos/912364/pexels-photo-912364.jpeg?cs=srgb&dl=pexels-brett-sayles-912364.jpg&fm=jpg"
+          alt="Background"
+          class="background-img"
+        />
+        <header>
+          <h1>Weather Forecast</h1>
+          <img src="./img/weatherforec.png" alt="" style="height: 100px; width: 100px; margin-bottom: 10px;">
+          <form id="form">
+            <input type="text" id="city" placeholder="Enter city name" />
+            <input type="submit" value="Search"  class=""/>
+          </form>
+        </header>
+        <section class="weather-display" id="weather-display">
+          <h2 id="city-name">City Name</h2>
+          <p id="temperature">Temperature: 0°C</p>
+          <p id="condition">Condition: Clear</p>
+        </section>
+        <footer>
+        </footer> 
+          <!-- Clock -->
+    <div class="datetime">
+        <div class="date">
+          <span id="dayname">Day</span>
+          <span id="month">Month</span>
+          <span id="daynum">00</span>
+          <span id="year">Year</span>
+        </div>
+  
+        <div class="time">
+          <span id="hour">00</span> :
+          <span id="minuts">00</span> :
+          <span id="seconds">00</span>
+          <span id="period">AM</span>
+        </div>
+      </div>
+      </div>
+ 
+  </body>
+  <script src="./index.js"></script>
+</html>
