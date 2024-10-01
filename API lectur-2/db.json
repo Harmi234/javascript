@@ -1,0 +1,28 @@
+{
+  "students": [
+    {
+      "id": "f419",
+      "name": "json",
+      "number": 453677,
+      "course": "full stack"
+    },
+    {
+      "id": "2e51",
+      "name": "json",
+      "number": 453677,
+      "course": "full stack"
+    },
+    {
+      "id": "f601",
+      "name": "test",
+      "number": 453677,
+      "course": "backend"
+    },
+    {
+      "id": "b8b5",
+      "name": "test",
+      "number": 453677,
+      "course": "backend"
+    }
+  ]
+}
