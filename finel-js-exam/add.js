@@ -27,5 +27,5 @@ document.getElementById("quiz-form").addEventListener("submit", function(event) 
     
     alert("Quiz submitted!");
 
-    window.location.href = "/index.html"; 
+    window.location.href = "/finel-js-exam/index.html"; 
 });
