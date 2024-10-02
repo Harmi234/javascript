@@ -16,7 +16,7 @@ document.getElementById("quiz-form").addEventListener("submit", function(event) 
 
     const mapResults = (quiz, form) => {
         return quiz.map((q, index) => {
-            const userAnswer = form[`q${index + 1}`].value; 
+            let userAnswer = form[`q${index + 1}`].value; 
             return { question: q.question, userAnswer, correctAnswer: q.correctAnswer };
         });
     };
