@@ -1,6 +1,6 @@
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
-let getValue = (selector) => document.querySelector(selector).value;
+const getValue = (selector) => document.querySelector(selector).value;
 
 const handleData = (e) => {
   e.preventDefault();
@@ -10,24 +10,21 @@ const handleData = (e) => {
   let password = getValue(".password");
   let photo = document.querySelector(".photo").files[0];
 
-  reader.onloadend = function () {
-    let user = {
-      username: username,
-      email: email,
-      password: password,
-      photo: reader.result || "default_image.png", 
-    };
-
-    users.push(user);
-    localStorage.setItem("users", JSON.stringify(users));
-    localStorage.setItem("username", user.username);
-    localStorage.setItem("userPhoto", user.photo);
-    localStorage.setItem("isLogin", true);
-
-    alert("Signup successful!");
-    window.location.href = "./home.html"; 
+  let user = {
+    username: username,
+    email: email,
+    password: password,
+    photo: photo ? photo.name : "default_image.png", 
   };
 
+  users.push(user);
+  localStorage.setItem("users", JSON.stringify(users));
+  localStorage.setItem("username", user.username);
+  localStorage.setItem("userPhoto", user.photo);
+  localStorage.setItem("isLogin", true);
+
+  alert("Signup successful!");
+  window.location.href = "./home.html"; 
 };
 
 document.querySelector("#userData").addEventListener("submit", handleData);
