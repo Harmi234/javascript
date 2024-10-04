@@ -16,7 +16,7 @@ function displayProducts(productsToDisplay = products) {
     let productContainer = document.getElementById('productContainer');
     productContainer.innerHTML = ''; 
 
-    productsToDisplay.forEach(product => {
+    productsToDisplay.forEach((product, index) => {
         let productCard = document.createElement('div');
         productCard.classList.add('product-card');
 
@@ -24,11 +24,17 @@ function displayProducts(productsToDisplay = products) {
             <img src="${product.image}" alt="${product.name}">
             <h3>${product.name}</h3>
             <p>Price: $${product.price}</p>
+            <button class="btn btn-danger" onclick="deleteProduct(${index})">Delete</button>
         `;
         productContainer.appendChild(productCard);
     });
 }
 
+function deleteProduct(index) {
+    products.splice(index, 1);  
+    localStorage.setItem('products', JSON.stringify(products)); 
+    displayProducts(); 
+}
 
 const handleSort = (orderBy) => {
     let sortedProducts;

@@ -1,31 +1,54 @@
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
+const getValue = (selector) => document.querySelector(selector).value;
+
 const handleData = (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  let user = {
-    email: getValue(".email"),
-    password: getValue(".password"),
-  };
+    let username = getValue(".username");
+    let email = getValue(".email");
+    let password = getValue(".password");
+    let photo = document.querySelector(".photo").files[0];
 
-  let matchedUser = users.find(
-    (ele) => ele.email == user.email && ele.password == user.password
-  );
+    if (photo) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            let user = {
+                username: username,
+                email: email,
+                password: password,
+                photo: reader.result 
+            };
 
-  if (matchedUser) {
-    alert("Login success");
+            users.push(user);
+            localStorage.setItem("users", JSON.stringify(users));
+            localStorage.setItem("username", user.username);
+            localStorage.setItem("userPhoto", user.photo); 
+            localStorage.setItem("isLogin", true);
 
-    localStorage.setItem("username", matchedUser.username);
-    localStorage.setItem("photo", matchedUser.photo); 
-    localStorage.setItem("isLogin", true);
-    window.location.href = "./home.html";
-  } else {
-    alert("Login failure");
-  }
+            alert("Login successful!");
+            window.location.href = "./home.html"; 
+        };
+        reader.readAsDataURL(photo); 
+    } else {
+        let user = {
+            username: username,
+            email: email,
+            password: password,
+            photo: "default_image.png", 
+        };
+
+        users.push(user);
+        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("username", user.username);
+        localStorage.setItem("userPhoto", user.photo);
+        localStorage.setItem("isLogin", true);
+
+        alert("Login successful!");
+        window.location.href = "./home.html"; 
+    }
 };
 
 document.querySelector("#userData").addEventListener("submit", handleData);
 
- function getValue(selector) {
-   return document.querySelector(selector).value;
- }
+
