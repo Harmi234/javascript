@@ -11,13 +11,12 @@ const addProduct = (title, price, category, img) => {
 
 document.getElementById("productData").addEventListener("submit", function (e) {
     e.preventDefault();
-    let title = document.getElementById("titleInput").value;
-    let price = document.getElementById("priceInput").value;
-    let category = document.getElementById("categoryInput").value;
-    let img = document.getElementById("imageInput").value;
+    let title = document.getElementById("title").value;
+    let price = document.getElementById("price").value;
+    let category = document.getElementById("category").value;
+    let img = document.getElementById("image").value;
 
     addProduct(title, price, category, img);
-
     document.getElementById("productData").reset();
 });
 
