@@ -38,7 +38,7 @@ function deleteProduct(index) {
 
 const handleSort = (orderBy) => {
     let sortedProducts;
-    if (orderBy === "lth") {
+    if (orderBy == "lth") {
         sortedProducts = [...products].sort((a, b) => a.price - b.price);
     } else {
         sortedProducts = [...products].sort((a, b) => b.price - a.price);
@@ -47,7 +47,7 @@ const handleSort = (orderBy) => {
 };
 
 const handleCategory = (category) => {
-    let filteredProducts = products.filter(product => product.category === category);
+    let filteredProducts = products.filter(product => product.category == category);
     displayProducts(filteredProducts); 
 };
 
